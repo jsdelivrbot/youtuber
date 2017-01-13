@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styles from './styles/main';
 
 // component import
 
@@ -18,11 +19,11 @@ const YouTube_API_Key = 'AIzaSyBq-mWPwn4YeaXPNFbH220ECf6CmUURG2s';
 
 const App = () => {
   return (
-      <div> 
-        <h1>MOAR BASS </h1>
+      <main style={styles.main} className="container"> 
+        <h1>Surprise Me </h1>
         <SearchBar />
         <Button />
-      </div>
+      </main>
   )
 }
 

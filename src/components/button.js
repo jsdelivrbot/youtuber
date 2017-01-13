@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+import styles from '../styles/main';
 
 // create button component
 
-const Button = () => {
-  return <button type="submit" value="Let's Roll"> Let's Roll! </button>;
+class Button extends Component {
+  constructor(props) {
+    super(props);
+      this.state = {isToggleOn: true};
+
+      this.onButtonClick = this.onButtonClick.bind(this);
+  }
+  onButtonClick() {
+    console.log('toggled');
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+  render() {
+    return <button style={styles.button} onClick={this.onButtonClick} type="submit"> {this.state.isToggleOn ? 'Let\'s Roll!' : 'Stop'} </button>;
+  }
 };
 
-export default Button;
+module.exports = Button;

@@ -1,0 +1,9 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+button:hover {
+  background-color: #cfcfde;
+  color: #3e3838;
+  transition: 0.7s ease-in-out;
+}
