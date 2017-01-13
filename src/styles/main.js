@@ -7,8 +7,16 @@ const styles = {
     'padding': '10px',
     'marginRight': '10px'
   },
+  ul: {
+    'listStyleType': 'none',
+    'margin': '20px 0'
+  },
+  li: {
+    'width': '400px'
+  },
   button: {
-    'width': '115px',
+    'display': 'block',
+    'width': '250px',
     'padding': '10px',
     'marginTop': '10px',
     'border': '2px solid black'
@@ -21,6 +29,9 @@ const styles = {
   searchTerm: {
     'color': 'red',
     'fontWeight': '700'
+  },
+  videoDetail: {
+    'padding': '20px 10px 20px 0'
   }
 }
 

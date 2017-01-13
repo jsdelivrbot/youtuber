@@ -10,11 +10,9 @@ class SearchBar extends Component {
 
     this.state = {term: 'Enter your videoz!'};
   }
-  
+
   onInputChange = (event) => {
-    this.setState({
-      term: event.target.value
-    })
+    this.setState({ term: event.target.value })
   }
 
   render() {

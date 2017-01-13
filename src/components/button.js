@@ -12,9 +12,7 @@ class Button extends Component {
   }
   onButtonClick() {
     console.log('toggled');
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }));
+    this.setState(prevState => ({ isToggleOn: !prevState.isToggleOn }));
   }
   render() {
     return <button style={styles.button} onClick={this.onButtonClick} type="submit"> {this.state.isToggleOn ? 'Let\'s Roll!' : 'Stop'} </button>;
