@@ -28,26 +28,28 @@ class App extends Component {
     this.state = { 
       videos: [],
       selectedVideo: null
-     };
+    };
 
     // YouTube API fetching videos
     YTSearch({key: YouTube_API_Key, term: 'always sunny in philadelphia'}, (videos) => {
       console.log('yt', videos)
       this.setState({ 
-        video: videos,
-        /*selectedVideo: videos[0]*/
-      });
+        videos: videos,
+        selectedVideo: videos[0]
+       });
     });
   }
 
   render() {
     return (
       <main style={styles.main} className="container"> 
-        <h1>YouTuber</h1>
+        <h1>Youtuber </h1>
         <SearchBar />
         <Button />
-        <VideoDetail video={this.state.videos[0]}/>
-        <VideoList onVideoSelect={selectedVideo => this.setState({selectedVideo})} videos={this.state.videos} />
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList 
+          onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+          videos={this.state.videos} />
       </main>
     )
   }
