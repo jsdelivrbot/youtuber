@@ -29,9 +29,12 @@ class App extends Component {
       videos: [],
       selectedVideo: null
     };
+    this.videoSearch('always sunny in philadelphia')
+  }
 
+  videoSearch(term) {
     // YouTube API fetching videos
-    YTSearch({key: YouTube_API_Key, term: 'always sunny in philadelphia'}, (videos) => {
+    YTSearch({key: YouTube_API_Key, term: term}, (videos) => {
       console.log('yt', videos)
       this.setState({ 
         videos: videos,
@@ -44,7 +47,7 @@ class App extends Component {
     return (
       <main style={styles.main} className="container"> 
         <h1>Youtuber </h1>
-        <SearchBar />
+        <SearchBar onSearchTermChange={term => this.videoSearch(term) } />
         <Button />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList 
