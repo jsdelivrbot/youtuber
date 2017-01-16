@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './styles/main';
@@ -41,13 +42,19 @@ class App extends Component {
         selectedVideo: videos[0]
        });
     });
+
+    //const debounced = _.debounce(onSearchTermChange, 500, {'maxWait': 1000});
   }
 
   render() {
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
     return (
       <main style={styles.main} className="container"> 
         <h1>Youtuber </h1>
-        <SearchBar onSearchTermChange={term => this.videoSearch(term) } />
+        <SearchBar 
+          onSearchTermChange={videoSearch}
+          //onDebounce={this.state.debounced}
+         />
         <Button />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList 
