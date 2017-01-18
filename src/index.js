@@ -11,6 +11,7 @@ import Button from './components/Button';
 import VideoList from './components/VideoList';
 import VideoListItem from './components/VideoListItem';
 import VideoDetail from './components/VideoDetail';
+//import ReactSlickDemo from './components/slider';
 
 // consts
 
