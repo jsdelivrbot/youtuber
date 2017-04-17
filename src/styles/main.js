@@ -12,7 +12,7 @@ const styles = {
     'margin': '20px 0'
   },
   li: {
-    'width': '400px'
+    'width': 'auto'
   },
   button: {
     'display': 'block',

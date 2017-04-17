@@ -27,7 +27,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { 
+    this.state = {
       videos: [],
       selectedVideo: null
     };
@@ -38,7 +38,7 @@ class App extends Component {
     // YouTube API fetching videos
     YTSearch({key: YouTube_API_Key, term: term}, (videos) => {
       console.log('yt', videos)
-      this.setState({ 
+      this.setState({
         videos: videos,
         selectedVideo: videos[0]
        });
@@ -50,15 +50,15 @@ class App extends Component {
   render() {
     const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
     return (
-      <main style={styles.main} className="container"> 
+      <main style={styles.main}>
         <h1>Youtuber </h1>
-        <SearchBar 
+        <SearchBar
           onSearchTermChange={videoSearch}
           //onDebounce={this.state.debounced}
          />
         <Button />
         <VideoDetail video={this.state.selectedVideo} />
-        <VideoList 
+        <VideoList
           onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
           videos={this.state.videos} />
       </main>
@@ -66,4 +66,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.getElementById('app'));
