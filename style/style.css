@@ -7,10 +7,13 @@ html {
   background-color: #ccc;
   padding: 15px 30px;
 }
+button {
+  background-color: white;
+}
 button:hover {
-  background-color: #cfcfde;
+  background-color: #53dfe3;
   color: #3e3838;
-  transition: 0.7s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 li {
   padding: 20px 0;
